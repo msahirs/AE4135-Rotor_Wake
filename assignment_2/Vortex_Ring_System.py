@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Tue May 14 12:00:17 2019
-
-@author: TannerRusk
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 def induced_velocity_vortex_system(delta, BigMatrix, controlpoints, gamma, double=False, phase_dif=0, d_sep=0):
