@@ -1,5 +1,5 @@
 import numpy as np
-import matplotlib.pyplot as plt
+
 def induced_velocity_vortex_system(delta, BigMatrix, controlpoints, gamma, double=False, phase_dif=0, d_sep=0):
     NBlades = len(BigMatrix[0,0,:,0])
     Nwp = len(BigMatrix[0,:,0,0])
@@ -93,6 +93,8 @@ def velocity_matrix_from_vortex_filament(X1_x, X1_y, X1_z, X2_x, X2_y, X2_z, Xp_
     
     return [np.sum(U,axis=2), np.sum(V,axis=2), np.sum(W,axis=2)]
 
+
+# import matplotlib.pyplot as plt
 # n=201
 
 # X1_x = np.ones([1,1,1])*-5

@@ -105,10 +105,10 @@ def WakeGeometry(case, U_infty, omega, n_t, n_r, a_w, NBlades, R, chord, Twist, 
             
             
             for Radial_Point in range(0,len(r_U),int(len(r_U)/2)-1):
-                ax.plot(Rings[Radial_Point,:,Blade,0], Rings[Radial_Point,:,Blade,1], Rings[Radial_Point,:,Blade,2], 'b-')
+                ax.plot(Rings[Radial_Point,:,Blade,0], Rings[Radial_Point,:,Blade,1], Rings[Radial_Point,:,Blade,2], 'b--', alpha = 0.75)
             
             ax.plot(Bladex_c_4,Bladey_c_4,Bladez_c_4, 'k--')
-            ax.plot(Bladex, Bladey, Bladez, 'k-')
+            ax.plot(Bladex, Bladey, Bladez, 'k-',linewidth = 2)
         ax.set_xlim([xmin, xmax])   
         if double:
             zmax = (S_sep + 2*R[-1])/2
@@ -127,13 +127,13 @@ def WakeGeometry(case, U_infty, omega, n_t, n_r, a_w, NBlades, R, chord, Twist, 
 # U_infty = 100
 
 # #Define input parameters
-# n_t = 200
+# n_t = 400
 # n_r = 1
 # a_w = 0
-# Radius = 50
+# Radius = 10
 
 # NBlades = 6
-# filename = 'GeoOptimalturbine.dat'
+# filename = "assignment_2/GeoOptimalpropeller.dat"
 # Mat = np.loadtxt(filename, dtype='float',skiprows = 1)
 
 # R = Mat[:,0]

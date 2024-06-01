@@ -44,7 +44,7 @@ Sensitivity = False          #Only runs if Double_rotor and BEM_compare == False
 
 Plot = True
 show_results_BEM = False
-plot_Wake = False
+plot_Wake = True
 
 #Model setup for double rotor configuration
 Double_rotor = False         #Set to True for double rotor configuration
