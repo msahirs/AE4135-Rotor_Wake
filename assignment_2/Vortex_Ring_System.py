@@ -4,6 +4,7 @@ def induced_velocity_vortex_system(delta, BigMatrix, controlpoints, gamma, doubl
     NBlades = len(BigMatrix[0,0,:,0])
     Nwp = len(BigMatrix[0,:,0,0])
     Ncp_Blade = len(BigMatrix[:,0,0,0])
+    print(Ncp_Blade)
     Ncp = Ncp_Blade * NBlades
     Umatrix = np.zeros((Ncp,Ncp))
     Vmatrix = np.zeros((Ncp,Ncp))
@@ -92,29 +93,29 @@ def velocity_matrix_from_vortex_filament(X1_x, X1_y, X1_z, X2_x, X2_y, X2_z, Xp_
     
     return [np.sum(U,axis=2), np.sum(V,axis=2), np.sum(W,axis=2)]
 
-n=201
+# n=201
 
-X1_x = np.ones([1,1,1])*-5
-X1_y = np.zeros([1,1,1])
-X1_z = np.zeros([1,1,1])
+# X1_x = np.ones([1,1,1])*-5
+# X1_y = np.zeros([1,1,1])
+# X1_z = np.zeros([1,1,1])
 
-X2_y = np.ones([1,1,1]) *4
-X2_x = np.ones([1,1,1])*5
-X2_z = np.zeros([1,1,1])
+# X2_y = np.ones([1,1,1]) *4
+# X2_x = np.ones([1,1,1])*5
+# X2_z = np.zeros([1,1,1])
 
-delta = 0.05
-dl = float(X2_x-X1_x)
+# delta = 0.05
+# dl = float(X2_x-X1_x)
 
-Xp_x = np.zeros([n,1,1])
-Xp_y = np.linspace(0,1,n).reshape([n,1,1])*dl
-Xp_z = np.zeros([n,1,1])
+# Xp_x = np.zeros([n,1,1])
+# Xp_y = np.linspace(0,1,n).reshape([n,1,1])*dl
+# Xp_z = np.zeros([n,1,1])
 
 
 
-[u,v,w] = velocity_matrix_from_vortex_filament(X1_x, X1_y, X1_z, X2_x, X2_y, X2_z, Xp_x, Xp_y, Xp_z, 1, delta)
-R = Xp_y.reshape((n,))/dl
+# [u,v,w] = velocity_matrix_from_vortex_filament(X1_x, X1_y, X1_z, X2_x, X2_y, X2_z, Xp_x, Xp_y, Xp_z, 1, delta)
+# R = Xp_y.reshape((n,))/dl
 
-plt.plot(R,u)
-plt.plot(R,v)
-plt.plot(R,w)
-plt.show()
+# plt.plot(R,u)
+# plt.plot(R,v)
+# plt.plot(R,w)
+# plt.show()
