@@ -19,9 +19,9 @@ t_start = time.time()
 factor = 1
 delta = 0.04
 #Blade discretisation parameters
-Ncp = 20
-dis_mode = 'constant'
-reload = True
+Ncp = 10
+dis_mode = 'constant' # cosine
+# reload = True
 order = 3
 
 #Vortex wake parameters
@@ -44,7 +44,7 @@ Sensitivity = False          #Only runs if Double_rotor and BEM_compare == False
 
 Plot = True
 show_results_BEM = False
-plot_Wake = True
+plot_Wake = False
 
 #Model setup for double rotor configuration
 Double_rotor = False         #Set to True for double rotor configuration
@@ -85,9 +85,10 @@ N_ann = len(Geo[:,0])
 # 
 
 #Continue with setting up lifting line model
-controlpoints = Geo[:,0].reshape((len(Geo[:,0]),1))[::5]
-Twist_cp = Geo[:,1].reshape(len(Geo[:,1]),1)[::5]
-Chord_cp = Geo[:,2].reshape(len(Geo[:,2]),1)[::5]
+controlpoints = Geo[:,0].reshape((len(Geo[:,0]),1))[::2]
+Twist_cp = Geo[:,1].reshape(len(Geo[:,1]),1)[::2]
+Chord_cp = Geo[:,2].reshape(len(Geo[:,2]),1)[::2]
+
 
 
 #Determine chord, twist and radii at discretised locations
@@ -307,6 +308,7 @@ if not Sensitivity:
             plt.grid()
             plt.xlabel('r/R')
             plt.legend()
+            plt.tight_layout()
             plt.show()
             
             #Normal and tangential forces
@@ -318,6 +320,7 @@ if not Sensitivity:
             plt.grid()
             plt.xlabel('r/R')
             plt.legend()
+            plt.tight_layout()
             plt.show()
                 
             #Circulation distribution
@@ -328,6 +331,7 @@ if not Sensitivity:
             plt.grid()
             plt.xlabel('r/R')
             plt.legend()
+            plt.tight_layout()
             plt.show()
             
             #Inflow distribution
@@ -341,6 +345,7 @@ if not Sensitivity:
             plt.ylabel('(deg)')
             plt.xlabel('r/R')
             plt.legend()
+            plt.tight_layout()
             plt.show()
         
     else:
@@ -443,6 +448,7 @@ else:
     plt.legend()
     plt.xlabel('r/R')
     plt.grid()
+    plt.tight_layout()
     plt.show()
     
     fig_gamma_sens = plt.figure(figsize=(12,6))
@@ -452,6 +458,7 @@ else:
     plt.legend()
     plt.xlabel('r/R')
     plt.grid()
+    plt.tight_layout()
     plt.show()
     
     fig_coef_sens = plt.figure(figsize=(12,6))
@@ -463,6 +470,7 @@ else:
     plt.xscale('log')
     plt.legend()
     plt.xlabel('# of wake rotations')
+    plt.tight_layout()
     plt.show()               
     for i in range(1,len(n_r_list)-1):
         ax_force_sens.plot(controlpoints,Fnorm_sens[i,:]/(0.5*V.U0**2*V.rho*V.R),'k'+lines[i], label=r'Fnorm, n_{r} = '+str(n_r_list[i]))

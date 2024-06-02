@@ -108,7 +108,7 @@ def WakeGeometry(case, U_infty, omega, n_t, n_r, a_w, NBlades, R, chord, Twist, 
                 ax.plot(Rings[Radial_Point,:,Blade,0], Rings[Radial_Point,:,Blade,1], Rings[Radial_Point,:,Blade,2], 'b--', alpha = 0.75)
             
             ax.plot(Bladex_c_4,Bladey_c_4,Bladez_c_4, 'k--')
-            ax.plot(Bladex, Bladey, Bladez, 'k-',linewidth = 2)
+            ax.plot(Bladex, Bladey, Bladez, 'k-',linewidth = 1)
         ax.set_xlim([xmin, xmax])   
         if double:
             zmax = (S_sep + 2*R[-1])/2

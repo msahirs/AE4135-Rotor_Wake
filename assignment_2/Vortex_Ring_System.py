@@ -4,7 +4,7 @@ def induced_velocity_vortex_system(delta, BigMatrix, controlpoints, gamma, doubl
     NBlades = len(BigMatrix[0,0,:,0])
     Nwp = len(BigMatrix[0,:,0,0])
     Ncp_Blade = len(BigMatrix[:,0,0,0])
-    print(Ncp_Blade)
+    # print(Ncp_Blade)
     Ncp = Ncp_Blade * NBlades
     Umatrix = np.zeros((Ncp,Ncp))
     Vmatrix = np.zeros((Ncp,Ncp))
